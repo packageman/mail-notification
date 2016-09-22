@@ -1,0 +1,8 @@
+
+ip=`echo $SSH_CONNECTION | cut -d " " -f 1`
+
+msg="$USER login from $ip"
+
+logger -t ssh-wrapper $msg
+
+echo "$msg" | mail -s "Login Notification" yourname@example.com
